@@ -18,21 +18,18 @@ body {
   width: 280px;
 }
 
-.dots {
-  margin-bottom: 10px;
+#set-time {
+  margin-bottom: 20px;
 }
 
-.dot {
-  height: 8px;
-  width: 8px;
-  margin: 0 2px;
-  background-color: #ddd;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.dot.active {
-  background-color: #333;
+#set-time input {
+  font-size: 20px;
+  width: 60px;
+  margin: 10px 5px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
 }
 
 #display {
