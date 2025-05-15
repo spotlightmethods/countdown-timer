@@ -8,7 +8,7 @@
 <body>
   <div class="outer">
     <div class="timer-wrapper">
-      <input id="display" value="20:00" />
+      <input id="display" value="20:00" maxlength="5" />
       <div class="divider"></div>
 
       <div class="bottom-controls">
@@ -22,6 +22,7 @@
   </div>
 
   <audio id="ding-sound" preload="auto">
+    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
     <source src="https://cdn.jsdelivr.net/gh/zephflint/timers/assets/beep.mp3" type="audio/mpeg">
   </audio>
 
