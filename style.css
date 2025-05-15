@@ -8,51 +8,59 @@ body {
   margin: 0;
 }
 
-.timer {
+.timer-wrapper {
   text-align: center;
-  font-size: 48px;
   border-radius: 25px;
-  padding: 30px 40px;
+  padding: 30px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border: 1px solid #eee;
   width: 280px;
 }
 
-#set-time,
-.set-time {
-  margin: 10px 0;
-}
-
-.set-time input {
-  font-size: 20px;
-  width: 70px;
-  margin: 5px;
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 6px;
+.time-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 #display {
-  font-size: 54px;
-  margin: 10px 0;
+  font-size: 56px;
+  flex: 1;
+  text-align: center;
 }
 
-.controls {
+.time-controls button {
+  font-size: 36px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.time-controls button:hover {
+  background: #ddd;
+}
+
+.buttons {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-button {
-  padding: 10px 20px;
+.buttons button {
+  padding: 10px;
   font-size: 16px;
-  margin: 0 5px;
   border-radius: 12px;
   border: none;
   background: #f0f0f0;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover {
+.buttons button:hover {
   background: #ddd;
 }
