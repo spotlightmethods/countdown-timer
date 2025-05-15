@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clean Countdown Timer</title>
+  <title>Countdown Timer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,12 +14,12 @@
     </div>
 
     <div class="buttons">
-      <button id="start-btn" onclick="startTimer()">Start</button>
+      <button onclick="startTimer()">Start</button>
       <button onclick="resetTimer()">Cancel</button>
     </div>
   </div>
 
   <audio id="ding-sound" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg" preload="auto"></audio>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
