@@ -1,50 +1,78 @@
-let time = 1200  // 20 minutes in seconds
-let interval = null
+const presets = [
+  { label: "Timer 1 (120 min)", seconds: 120 * 60 },
+  { label: "Timer 2 (60 min)", seconds: 60 * 60 },
+  { label: "Timer 3 (30 min)", seconds: 30 * 60 },
+  { label: "Timer 4 (20 min)", seconds: 20 * 60 },
+  { label: "Timer 5 (15 min)", seconds: 15 * 60 },
+  { label: "Timer 6 (10 min)", seconds: 10 * 60 },
+  { label: "Timer 7 (5 min)", seconds: 5 * 60 }
+]
 
-function updateDisplay() {
-  const minutes = String(Math.floor(time / 60)).padStart(2, '0')
-  const seconds = String(time % 60).padStart(2, '0')
-  document.getElementById('display').textContent = `${minutes}:${seconds}`
+let intervals = []
+const ding = document.getElementById("ding-sound")
+
+function createTimers() {
+  const container = document.getElementById("carousel")
+  presets.forEach((preset, index) => {
+    const card = document.createElement("div")
+    card.className = "timer-card"
+
+    card.innerHTML = `
+      <div class="timer-title">${preset.label}</div>
+      <div id="display-${index}" class="display">20:00</div>
+      <div>
+        <input type="number" id="min-${index}" placeholder="Min" min="0" max="999">
+        <input type="number" id="sec-${index}" placeholder="Sec" min="0" max="59">
+      </div>
+      <div>
+        <button onclick="startTimer(${index})">Start</button>
+        <button onclick="resetTimer(${index}, ${preset.seconds})">Reset</button>
+      </div>
+    `
+    container.appendChild(card)
+    resetTimer(index, preset.seconds)
+  })
 }
 
-function startTimer() {
-  if (interval) return
+function formatTime(seconds) {
+  const min = String(Math.floor(seconds / 60)).padStart(2, '0')
+  const sec = String(seconds % 60).padStart(2, '0')
+  return `${min}:${sec}`
+}
 
-  const minutesInput = parseInt(document.getElementById('minutes').value) || 0
-  const secondsInput = parseInt(document.getElementById('seconds').value) || 0
-  const total = minutesInput * 60 + secondsInput
+function startTimer(index) {
+  if (intervals[index]) return
 
-  if (total > 0) time = total
+  const min = parseInt(document.getElementById(`min-${index}`).value) || 0
+  const sec = parseInt(document.getElementById(`sec-${index}`).value) || 0
+  let time = min * 60 + sec
 
-  updateDisplay()
+  const display = document.getElementById(`display-${index}`)
+  display.textContent = formatTime(time)
 
-  interval = setInterval(() => {
+  intervals[index] = setInterval(() => {
     time--
-    updateDisplay()
+    display.textContent = formatTime(time)
     if (time <= 0) {
-      clearInterval(interval)
-      interval = null
-      alert("Time's up!")
+      clearInterval(intervals[index])
+      intervals[index] = null
+      ding.play()
     }
   }, 1000)
 }
 
-function resetTimer() {
-  clearInterval(interval)
-  interval = null
-  time = 1200  // Reset to 20 minutes
-  document.getElementById('minutes').value = ''
-  document.getElementById('seconds').value = ''
-  updateDisplay()
+function resetTimer(index, defaultTime) {
+  clearInterval(intervals[index])
+  intervals[index] = null
+  document.getElementById(`display-${index}`).textContent = formatTime(defaultTime)
+  document.getElementById(`min-${index}`).value = Math.floor(defaultTime / 60)
+  document.getElementById(`sec-${index}`).value = defaultTime % 60
 }
 
-function setPreset(seconds) {
-  clearInterval(interval)
-  interval = null
-  time = seconds
-  document.getElementById('minutes').value = ''
-  document.getElementById('seconds').value = ''
-  updateDisplay()
+function scrollTimers(direction) {
+  const carousel = document.getElementById("carousel")
+  const width = carousel.clientWidth
+  carousel.scrollBy({ left: width * direction, behavior: "smooth" })
 }
 
-updateDisplay()
+createTimers()
