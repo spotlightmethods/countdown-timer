@@ -3,13 +3,17 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+}
+
+.outer {
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
 .timer-wrapper {
