@@ -3,7 +3,7 @@ let interval = null
 
 function updateDisplay() {
   const minutes = String(Math.floor(time / 60)).padStart(2, '0')
-  const seconds = String(time % 60)).padStart(2, '0')
+  const seconds = String(time % 60).padStart(2, '0')
   document.getElementById("display").value = `${minutes}:${seconds}`
 }
 
@@ -35,7 +35,7 @@ function startTimer() {
       interval = null
       const sound = document.getElementById("ding-sound")
       sound.currentTime = 0
-      sound.play().catch(() => {})
+      sound.play().catch(err => console.warn("Sound failed:", err))
     }
   }, 1000)
 }
