@@ -7,16 +7,16 @@
 </head>
 <body>
   <div class="timer-wrapper">
-    <div class="time-controls">
-      <button onclick="adjustTime(-60)">−</button>
-      <div id="display">20:00</div>
-      <button onclick="adjustTime(60)">+</button>
+    <div id="display">20:00</div>
+    <div class="divider"></div>
+
+    <div class="bottom-controls">
+      <button class="adjust-btn" onclick="adjustTime(-60)">−</button>
+      <button id="start-btn" onclick="startTimer()">Start</button>
+      <button class="adjust-btn" onclick="adjustTime(60)">+</button>
     </div>
 
-    <div class="buttons">
-      <button onclick="startTimer()">Start</button>
-      <button onclick="resetTimer()">Cancel</button>
-    </div>
+    <button id="cancel-btn" onclick="resetTimer()">Cancel</button>
   </div>
 
   <audio id="ding-sound" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg" preload="auto"></audio>
