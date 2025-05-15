@@ -10,11 +10,11 @@ body {
 
 .timer-wrapper {
   text-align: center;
-  border-radius: 28px;
-  padding: 24px;
+  border-radius: 24px;
+  padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
-  width: 300px;
+  width: 280px;
 }
 
 #display {
@@ -24,9 +24,9 @@ body {
 }
 
 .divider {
-  height: 2px;
+  height: 1.5px;
   background: #e0e0e0;
-  margin: 12px 0 20px;
+  margin: 8px 0 12px;
   border-radius: 10px;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 #start-btn {
-  padding: 10px 20px;
+  padding: 8px 20px;
   font-size: 16px;
   font-weight: 500;
   border: none;
@@ -67,7 +67,7 @@ body {
 
 #cancel-btn {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 13px;
   color: #999;
   background: none;
   border: none;
