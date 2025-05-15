@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Countdown Timer</title>
+  <title>Clean Countdown Timer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="timer">
-    <div id="display">20:00</div>
-
-    <div class="set-time">
-      <input type="number" id="minutes" value="20" min="0" max="999">
-      <input type="number" id="seconds" value="0" min="0" max="59">
+  <div class="timer-wrapper">
+    <div class="time-controls">
+      <button onclick="adjustTime(-60)">−</button>
+      <div id="display">20:00</div>
+      <button onclick="adjustTime(60)">+</button>
     </div>
 
-    <div class="controls">
-      <button onclick="startTimer()">Start</button>
-      <button onclick="resetTimer()">Reset</button>
+    <div class="buttons">
+      <button id="start-btn" onclick="startTimer()">Start</button>
+      <button onclick="resetTimer()">Cancel</button>
     </div>
   </div>
 
