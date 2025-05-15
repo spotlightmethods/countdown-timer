@@ -1,6 +1,6 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: white;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,11 +10,12 @@ body {
 
 .timer-wrapper {
   text-align: center;
+  background: white;
   border-radius: 24px;
   padding: 16px;
+  width: 280px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
-  width: 280px;
 }
 
 #display {
