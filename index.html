@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Timer Widget</title>
+  <title>Countdown Timer Widget</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="timer">
-    <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
     <div id="display">00:00</div>
+
+    <div class="set-time">
+      <input type="number" id="minutes" placeholder="Min" min="0" max="59">
+      <input type="number" id="seconds" placeholder="Sec" min="0" max="59">
+    </div>
+
     <div class="controls">
       <button onclick="startTimer()">Start</button>
       <button onclick="resetTimer()">Reset</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
