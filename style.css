@@ -14,13 +14,13 @@ body {
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
-  width: 280px;
+  width: 300px;
 }
 
 #display {
   font-size: 64px;
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .divider {
@@ -38,9 +38,9 @@ body {
 
 .adjust-btn {
   font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
   border: none;
   background: #f1f1f1;
   color: #333;
@@ -59,7 +59,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   background: #eee;
   cursor: pointer;
   transition: background 0.3s;
@@ -70,7 +70,7 @@ body {
 }
 
 #cancel-btn {
-  margin-top: 12px;
+  margin-top: 16px;
   font-size: 14px;
   color: #999;
   background: none;
