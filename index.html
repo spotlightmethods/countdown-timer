@@ -8,7 +8,7 @@
 <body>
   <div class="outer">
     <div class="timer-wrapper">
-      <div id="display">20:00</div>
+      <input id="display" value="20:00" />
       <div class="divider"></div>
 
       <div class="bottom-controls">
@@ -21,10 +21,9 @@
     </div>
   </div>
 
-  <!-- One-time beep -->
   <audio id="ding-sound" preload="auto">
-  <source src="https://cdn.jsdelivr.net/gh/zephflint/timers/assets/beep.mp3" type="audio/mpeg">
-</audio>
+    <source src="https://cdn.jsdelivr.net/gh/zephflint/timers/assets/beep.mp3" type="audio/mpeg">
+  </audio>
 
   <script src="script.js" defer></script>
 </body>
