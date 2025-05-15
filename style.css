@@ -1,48 +1,36 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #ffffff;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
+  margin: 0;
 }
 
-.carousel-wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 350px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-}
-
-.timer-card {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  padding: 20px;
-  box-sizing: border-box;
+.timer {
   text-align: center;
-  border-radius: 20px;
+  font-size: 48px;
+  border-radius: 25px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border: 1px solid #eee;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
+  width: 280px;
 }
 
-.timer-title {
-  font-size: 18px;
-  margin-bottom: 10px;
+#set-time,
+.set-time {
+  margin: 10px 0;
+}
+
+.set-time input {
+  font-size: 20px;
+  width: 70px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 6px;
 }
 
 #display {
@@ -50,20 +38,14 @@ body {
   margin: 10px 0;
 }
 
-input[type="number"] {
-  font-size: 20px;
-  width: 70px;
-  padding: 6px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  text-align: center;
+.controls {
+  margin-top: 10px;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
-  margin: 10px 5px 0;
+  margin: 0 5px;
   border-radius: 12px;
   border: none;
   background: #f0f0f0;
@@ -73,12 +55,4 @@ button {
 
 button:hover {
   background: #ddd;
-}
-
-.nav {
-  font-size: 28px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  user-select: none;
 }
