@@ -61,6 +61,11 @@ body {
   user-select: none;
   cursor: pointer;
   line-height: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 .adjust-symbol:hover {
