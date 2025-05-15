@@ -1,0 +1,60 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.timer {
+  text-align: center;
+  font-size: 48px;
+  border-radius: 25px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  width: 280px;
+}
+
+.dots {
+  margin-bottom: 10px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+#display {
+  font-size: 56px;
+  margin: 10px 0;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 12px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ddd;
+}
