@@ -10,59 +10,70 @@ body {
 
 .timer-wrapper {
   text-align: center;
-  border-radius: 25px;
+  border-radius: 30px;
   padding: 30px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
   width: 280px;
 }
 
-.time-controls {
+#display {
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.divider {
+  height: 2px;
+  background: #e0e0e0;
+  margin: 8px 0 20px;
+  border-radius: 10px;
+}
+
+.bottom-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
 }
 
-#display {
-  font-size: 56px;
-  flex: 1;
-  text-align: center;
-}
-
-.time-controls button {
-  font-size: 36px;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
+.adjust-btn {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   border: none;
-  background: #f0f0f0;
+  background: #f1f1f1;
+  color: #333;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.time-controls button:hover {
+.adjust-btn:hover {
   background: #ddd;
 }
 
-.buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.buttons button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 12px;
+#start-btn {
+  flex: 1;
+  margin: 0 10px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 500;
   border: none;
-  background: #f0f0f0;
+  border-radius: 20px;
+  background: #eee;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.buttons button:hover {
+#start-btn:hover {
   background: #ddd;
+}
+
+#cancel-btn {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
