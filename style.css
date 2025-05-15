@@ -14,7 +14,7 @@ body {
   padding: 24px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
-  width: 280px;
+  width: 300px;
 }
 
 #display {
@@ -35,15 +35,19 @@ body {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-top: 10px;
 }
 
 .adjust-symbol {
   font-size: 24px;
-  color: #aaa;
+  color: #999;
   user-select: none;
   cursor: pointer;
   line-height: 1;
+  padding: 10px;
+}
+
+.adjust-symbol:hover {
+  color: #666;
 }
 
 #start-btn {
@@ -51,7 +55,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   border: none;
-  border-radius: 18px;
+  border-radius: 20px;
   background: #e0e0e0;
   color: black;
   cursor: pointer;
@@ -63,7 +67,7 @@ body {
 }
 
 #cancel-btn {
-  margin-top: 14px;
+  margin-top: 6px;
   font-size: 14px;
   color: #999;
   background: none;
