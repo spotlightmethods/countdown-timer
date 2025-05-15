@@ -7,7 +7,18 @@
 </head>
 <body>
   <div class="timer">
-    <div id="display">00:00</div>
+    <div class="preset-buttons">
+      <button onclick="setPreset(120)">2m</button>
+      <button onclick="setPreset(60)">1m</button>
+      <button onclick="setPreset(45)">45s</button>
+      <button onclick="setPreset(30)">30s</button>
+      <button onclick="setPreset(20)">20s</button>
+      <button onclick="setPreset(15)">15s</button>
+      <button onclick="setPreset(10)">10s</button>
+      <button onclick="setPreset(5)">5s</button>
+    </div>
+
+    <div id="display">20:00</div>
 
     <div class="set-time">
       <input type="number" id="minutes" placeholder="Min" min="0" max="59">
