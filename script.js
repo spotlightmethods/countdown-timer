@@ -1,14 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   let time = 20 * 60
   let interval = null
+  let isPaused = false
 
   const display = document.getElementById("display")
   const sound = document.getElementById("ding-sound")
   const startBtn = document.getElementById("start-btn")
+  const cancelBtn = document.getElementById("cancel-btn")
+  const adjustMinus = document.querySelector(".adjust-symbol:first-of-type")
+  const adjustPlus = document.querySelector(".adjust-symbol:last-of-type")
 
   function updateDisplay() {
     const minutes = String(Math.floor(time / 60)).padStart(2, '0')
-    const seconds = String(time % 60).padStart(2, '0')
+    const seconds = String(time % 60)).padStart(2, '0')
     display.value = `${minutes}:${seconds}`
   }
 
@@ -20,64 +24,58 @@ document.addEventListener("DOMContentLoaded", () => {
     return min * 60 + sec
   }
 
-  function startTicking() {
-    interval = setInterval(() => {
-      if (time > 0) {
-        time--
-        updateDisplay()
-      } else {
-        clearInterval(interval)
-        interval = null
-        startBtn.textContent = "Start"
-        startBtn.dataset.state = "stopped"
-        sound.currentTime = 0
-        sound.play().catch(() => {})
-      }
-    }, 1000)
+  function tick() {
+    if (time > 0) {
+      time--
+      updateDisplay()
+    } else {
+      clearInterval(interval)
+      interval = null
+      isPaused = false
+      startBtn.textContent = "Start"
+      sound.currentTime = 0
+      sound.play().catch(() => {})
+    }
   }
 
   startBtn.addEventListener("click", () => {
-    const state = startBtn.dataset.state
-
-    if (state === "stopped") {
-      time = parseTimeInput()
-      startTicking()
-      startBtn.textContent = "Pause"
-      startBtn.dataset.state = "running"
-    } else if (state === "running") {
+    if (interval && !isPaused) {
+      // Pause
       clearInterval(interval)
       interval = null
+      isPaused = true
       startBtn.textContent = "Start"
-      startBtn.dataset.state = "paused"
-    } else if (state === "paused") {
-      startTicking()
+    } else {
+      // Start or resume
+      if (!isPaused) {
+        time = parseTimeInput()
+      }
+      interval = setInterval(tick, 1000)
+      isPaused = false
       startBtn.textContent = "Pause"
-      startBtn.dataset.state = "running"
     }
   })
 
-  document.getElementById("cancel-btn").addEventListener("click", () => {
+  cancelBtn.addEventListener("click", () => {
     clearInterval(interval)
     interval = null
+    isPaused = false
     time = 20 * 60
     updateDisplay()
     startBtn.textContent = "Start"
-    startBtn.dataset.state = "stopped"
   })
 
-  document.querySelector(".adjust-symbol:first-of-type").addEventListener("click", () => {
+  adjustMinus.addEventListener("click", () => {
     time = parseTimeInput()
     time = Math.max(0, time - 60)
     updateDisplay()
   })
 
-  document.querySelector(".adjust-symbol:last-of-type").addEventListener("click", () => {
+  adjustPlus.addEventListener("click", () => {
     time = parseTimeInput()
-    time = time + 60
+    time += 60
     updateDisplay()
   })
 
-  // Set initial state
-  startBtn.dataset.state = "stopped"
   updateDisplay()
 })
