@@ -1,4 +1,4 @@
-let time = 0
+let time = 1200  // 20 minutes in seconds
 let interval = null
 
 function updateDisplay() {
@@ -12,9 +12,9 @@ function startTimer() {
 
   const minutesInput = parseInt(document.getElementById('minutes').value) || 0
   const secondsInput = parseInt(document.getElementById('seconds').value) || 0
-  time = minutesInput * 60 + secondsInput
+  const total = minutesInput * 60 + secondsInput
 
-  if (time <= 0) return
+  if (total > 0) time = total
 
   updateDisplay()
 
@@ -32,10 +32,19 @@ function startTimer() {
 function resetTimer() {
   clearInterval(interval)
   interval = null
-  time = 0
-  updateDisplay()
+  time = 1200  // Reset to 20 minutes
   document.getElementById('minutes').value = ''
   document.getElementById('seconds').value = ''
+  updateDisplay()
+}
+
+function setPreset(seconds) {
+  clearInterval(interval)
+  interval = null
+  time = seconds
+  document.getElementById('minutes').value = ''
+  document.getElementById('seconds').value = ''
+  updateDisplay()
 }
 
 updateDisplay()
