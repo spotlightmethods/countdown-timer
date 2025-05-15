@@ -1,3 +1,7 @@
+html {
+  background: transparent !important;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: transparent;
