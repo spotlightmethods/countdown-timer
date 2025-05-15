@@ -43,7 +43,6 @@ body {
   user-select: none;
   cursor: pointer;
   line-height: 1;
-  padding: 10px;
 }
 
 .adjust-symbol:hover {
@@ -51,7 +50,7 @@ body {
 }
 
 #start-btn {
-  padding: 10px 28px;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: 500;
   border: none;
@@ -67,7 +66,7 @@ body {
 }
 
 #cancel-btn {
-  margin-top: 6px;
+  margin-top: 4px;
   font-size: 14px;
   color: #999;
   background: none;
