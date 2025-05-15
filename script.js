@@ -9,9 +9,23 @@ function updateDisplay() {
 
 function startTimer() {
   if (interval) return
+
+  const minutesInput = parseInt(document.getElementById('minutes').value) || 0
+  const secondsInput = parseInt(document.getElementById('seconds').value) || 0
+  time = minutesInput * 60 + secondsInput
+
+  if (time <= 0) return
+
+  updateDisplay()
+
   interval = setInterval(() => {
-    time++
+    time--
     updateDisplay()
+    if (time <= 0) {
+      clearInterval(interval)
+      interval = null
+      alert("Time's up!")
+    }
   }, 1000)
 }
 
@@ -20,6 +34,8 @@ function resetTimer() {
   interval = null
   time = 0
   updateDisplay()
+  document.getElementById('minutes').value = ''
+  document.getElementById('seconds').value = ''
 }
 
 updateDisplay()
