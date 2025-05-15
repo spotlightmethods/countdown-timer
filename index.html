@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Timer Carousel</title>
+  <title>Simple Countdown Timer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="carousel-wrapper">
-    <button class="nav left" onclick="scrollTimers(-1)">◀</button>
+  <div class="timer">
+    <div id="display">20:00</div>
 
-    <div class="carousel" id="carousel">
-      <!-- Timer cards will be inserted here by JS -->
+    <div class="set-time">
+      <input type="number" id="minutes" value="20" min="0" max="999">
+      <input type="number" id="seconds" value="0" min="0" max="59">
     </div>
 
-    <button class="nav right" onclick="scrollTimers(1)">▶</button>
+    <div class="controls">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
   </div>
 
   <audio id="ding-sound" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg" preload="auto"></audio>
