@@ -38,6 +38,7 @@ body {
   max-width: 140px;
   margin: 0 auto;
   display: block;
+  letter-spacing: 1px;
 }
 
 .divider {
