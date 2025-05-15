@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Countdown Timer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Timer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="outer">
     <div class="timer-wrapper">
       <input id="display" value="20:00" maxlength="5" />
       <div class="divider"></div>
-
       <div class="bottom-controls">
-        <div class="adjust-symbol" onclick="adjustTime(-60)">−</div>
+        <button class="adjust-symbol" id="minus">−</button>
         <button id="start-btn">Start</button>
-        <div class="adjust-symbol" onclick="adjustTime(60)">+</div>
+        <button class="adjust-symbol" id="plus">+</button>
       </div>
-
-      <button id="cancel-btn" onclick="resetTimer()">Cancel</button>
+      <button id="cancel-btn">Cancel</button>
     </div>
   </div>
 
   <audio id="ding-sound" preload="auto">
-    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
-    <source src="https://cdn.jsdelivr.net/gh/zephflint/timers/assets/beep.mp3" type="audio/mpeg">
+    <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg" />
+    <source src="https://cdn.jsdelivr.net/gh/zephflint/timers/assets/beep.mp3" type="audio/mpeg" />
   </audio>
 
   <script src="script.js" defer></script>
