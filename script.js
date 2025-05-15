@@ -21,7 +21,11 @@ function startTimer() {
     } else {
       clearInterval(interval)
       interval = null
-      document.getElementById("ding-sound").play()
+      const sound = document.getElementById("ding-sound")
+      sound.currentTime = 0
+      sound.play().catch((err) => {
+        console.log("Playback failed:", err)
+      })
     }
   }, 1000)
 }
