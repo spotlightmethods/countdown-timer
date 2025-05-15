@@ -1,9 +1,7 @@
-html {
-  background: transparent !important;
-}
-
+html,
 body {
   background: transparent !important;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -13,17 +11,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100%;
 }
 
 .timer-wrapper {
-  text-align: center;
   background: white;
   border-radius: 24px;
   padding: 16px;
   width: 280px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 #display {
@@ -66,6 +66,10 @@ body {
   padding: 0;
   margin: 0;
   outline: none;
+  vertical-align: middle;
+  font-weight: 300;
+  position: relative;
+  top: -1px;
 }
 
 .adjust-symbol:hover {
