@@ -12,33 +12,56 @@ body {
   text-align: center;
   font-size: 48px;
   border-radius: 25px;
-  padding: 30px 40px;
+  padding: 20px 30px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border: 1px solid #eee;
-  width: 280px;
+  width: 300px;
 }
 
-#set-time {
-  margin-bottom: 20px;
+.preset-buttons {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
 }
 
-#set-time input {
-  font-size: 20px;
-  width: 60px;
-  margin: 10px 5px;
+.preset-buttons button {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.preset-buttons button:hover {
+  background: #ccc;
+}
+
+#set-time,
+.set-time {
+  margin: 10px 0;
+}
+
+.set-time input {
+  font-size: 18px;
+  width: 70px;
+  margin: 5px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  padding: 5px;
+  padding: 6px;
 }
 
 #display {
-  font-size: 56px;
+  font-size: 54px;
   margin: 10px 0;
 }
 
 .controls {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 button {
