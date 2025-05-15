@@ -15,13 +15,13 @@ function parseTimeInput() {
   return min * 60 + sec
 }
 
-function adjustTime(amount) {
+window.adjustTime = function (amount) {
   time = parseTimeInput()
   time = Math.max(0, time + amount)
   updateDisplay()
 }
 
-function startTimer() {
+window.startTimer = function () {
   if (interval) return
   time = parseTimeInput()
   updateDisplay()
@@ -35,12 +35,12 @@ function startTimer() {
       interval = null
       const sound = document.getElementById("ding-sound")
       sound.currentTime = 0
-      sound.play().catch(err => console.warn("Sound failed:", err))
+      sound.play().catch(err => console.warn("Sound blocked:", err))
     }
   }, 1000)
 }
 
-function resetTimer() {
+window.resetTimer = function () {
   clearInterval(interval)
   interval = null
   time = 20 * 60
