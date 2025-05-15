@@ -6,20 +6,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="timer-wrapper">
-    <div id="display">20:00</div>
-    <div class="divider"></div>
+  <div class="outer">
+    <div class="timer-wrapper">
+      <div id="display">20:00</div>
+      <div class="divider"></div>
 
-    <div class="bottom-controls">
-      <div class="adjust-symbol" onclick="adjustTime(-60)">−</div>
-      <button id="start-btn" onclick="startTimer()">Start</button>
-      <div class="adjust-symbol" onclick="adjustTime(60)">+</div>
+      <div class="bottom-controls">
+        <div class="adjust-symbol" onclick="adjustTime(-60)">−</div>
+        <button id="start-btn" onclick="startTimer()">Start</button>
+        <div class="adjust-symbol" onclick="adjustTime(60)">+</div>
+      </div>
+
+      <button id="cancel-btn" onclick="resetTimer()">Cancel</button>
     </div>
-
-    <button id="cancel-btn" onclick="resetTimer()">Cancel</button>
   </div>
 
+  <!-- One-time beep -->
   <audio id="ding-sound" src="https://freesound.org/data/previews/522/522098_11572450-lq.mp3" preload="auto"></audio>
+
   <script src="script.js" defer></script>
 </body>
 </html>
